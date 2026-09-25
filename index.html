@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<meta name="theme-color" content="#2a2a2a">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<title>SnapNote</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <h1>SnapNote</h1>
+  <button id="navBtn" class="nav-btn">Конспекты</button>
+</header>
+
+<main>
+
+  <section id="recorderScreen" class="screen active">
+    <div class="status" id="status">Загрузка...</div>
+    <div class="transcript" id="transcript">
+      <span class="placeholder">Нажмите кнопку и говорите...</span>
+    </div>
+    <div class="controls">
+<button id="recordBtn" class="record-btn" aria-label="Запись" disabled>
+  <i id="recordIcon" class="fa-solid fa-microphone"></i>
+</button>
+      <button id="saveBtn" class="action-btn" hidden>Сделать конспект</button>
+    </div>
+  </section>
+
+  <section id="notesScreen" class="screen">
+    <div id="notesList" class="notes-list"></div>
+  </section>
+
+  <section id="noteDetailScreen" class="screen">
+    <button class="back-btn" id="backBtn">← Назад</button>
+    <h2 id="noteTitle"></h2>
+    <div class="note-date" id="noteDate"></div>
+    <div id="noteContent" class="note-content"></div>
+    <div class="detail-actions">
+      <button class="action-btn ghost" id="copyNoteBtn">Копировать</button>
+      <button class="action-btn danger" id="deleteNoteBtn">Удалить</button>
+    </div>
+  </section>
+
+</main>
+
+<!-- Vosk-Browser: распознавание речи -->
+<script src="https://cdn.jsdelivr.net/npm/vosk-browser@0.0.5/dist/vosk.js"></script>
+<script src="script.js" defer></script>
+</body>
+</html>
